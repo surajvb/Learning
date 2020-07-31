@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 
 const User = ({ match }) => {
@@ -13,13 +13,16 @@ function App() {
         <h1> React router demonstration</h1>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink to='/' exact activeStyle={{color:'green'}}>Home</NavLink>
           </li>
           <li>
-            <Link to='/about/'>About</Link>
+            <NavLink to='/about/' exact activeStyle={{color:'green'}}>About</NavLink>
           </li>
           <li>
-            <Link to='/user/suraj'>Suraj Logged In</Link>
+            <NavLink to='/user/suraj' exact activeStyle={{color:'green'}}>Suraj Logged In</NavLink>
+          </li>
+          <li>
+            <NavLink to='/user/guest' exact activeStyle={{color:'green'}}>Guest Logged In</NavLink>
           </li>
         </ul>
 
